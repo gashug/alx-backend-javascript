@@ -1,5 +1,7 @@
 // Returning a Promise using a prototype
 
-export default function getResponseFromAPI() {
+function getResponseFromAPI() {
 	return new Promise(() => {});
 }
+
+export default getResponseFromAPI;
