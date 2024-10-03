@@ -19,3 +19,4 @@ export default async function asyncUploadUser() {
     // If any Promise rejects, return an object with null values
     return { photo: null, user: null };
   }
+}
