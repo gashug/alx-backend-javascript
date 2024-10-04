@@ -1,70 +1,117 @@
-// Represents the HolbertonCourse class
+/**
+ * Represents a Holberton course with a name, length, and list of students.
+ */
 export default class HolbertonCourse {
-  // initializing the parameters
+  /**
+   * Creates a new HolbertonCourse instance.
+   *
+   * @param {string} name - The name of the course.
+   * @param {number} length - The length of the course.
+   * @param {string[]} students - An array of student names enrolled in the course.
+   */
   constructor(name, length, students) {
-    // validating the input parameters using helper functions
+    // Validate the input parameters using helper functions
     this._checkName(name);
     this._checkLength(length);
     this._checkStudents(students);
 
-    // storing the validated values in private properties
+    // Store the validated values in private properties
     this._name = name;
     this._length = length;
     this._students = students;
   }
 
-  // Getter for the course name
+  /**
+   * Gets the name of the course.
+   *
+   * @returns {string} The name of the course.
+   */
   get name() {
     return this._name;
   }
 
-  // Setter for the course name
+  /**
+   * Sets the name of the course.
+   *
+   * @param {string} newName - The new name for the course.
+   */
   set name(newName) {
     // Validate the new name
     this._checkName(newName);
     this._name = newName;
   }
 
-  // Getter for the course length
+  /**
+   * Gets the length of the course.
+   *
+   * @returns {number} The length of the course.
+   */
   get length() {
     return this._length;
   }
 
-  // Setter for the course length
+  /**
+   * Sets the length of the course.
+   *
+   * @param {number} newLength - The new length for the course.
+   */
   set length(newLength) {
     // Validate the new length
     this._checkLength(newLength);
     this._length = newLength;
   }
 
-  // Getter for the course students
+  /**
+   * Gets a copy of the students enrolled in the course.
+   *
+   * @returns {string[]} A copy of the students array.
+   */
   get students() {
     // Return a copy of the students array to prevent modifications
     return [...this._students];
   }
 
-  // Setter for the course students
+  /**
+   * Sets the list of students enrolled in the course.
+   *
+   * @param {string[]} newStudents - The new list of student names.
+   */
   set students(newStudents) {
     // Validate the new students
     this._checkStudents(newStudents);
     this._students = newStudents;
   }
 
-  // Helper function to check if the name is a string
+  /**
+   * Checks if the given name is a valid string.
+   *
+   * @param {string} name - The name to check.
+   * @throws {TypeError} If the name is not a string.
+   */
   _checkName(name) {
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a string');
     }
   }
 
-  // Helper function to check if the length is a number
+  /**
+   * Checks if the given length is a valid number.
+   *
+   * @param {number} length - The length to check.
+   * @throws {TypeError} If the length is not a number.
+   */
   _checkLength(length) {
     if (typeof length !== 'number') {
       throw new TypeError('Length must be a number');
     }
   }
 
-  // Helper function to check if the students are an array of strings
+  /**
+   * Checks if the given students array is valid.
+   *
+   * @param {string[]} students - The students array to check.
+   * @throws {TypeError} If the students array is not an array of strings.
+   */
   _checkStudents(students) {
     if (!Array.isArray(students) || students.some(student => typeof student !== 'string')) {
       throw new TypeError('Students must be an array of strings');

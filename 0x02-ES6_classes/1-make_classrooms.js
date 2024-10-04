@@ -1,6 +1,11 @@
-import ClassRoom from './0-classrom.js';
+import ClassRoom from './0-classroom';
 
-// Fn that intializes an array of ClassRoom objects
-export default function initializeRooms () {
-	return [new ClassRoom(19, new ClassRoom(20), new ClassRoom(34)];
+/**
+ * Initializes an array of ClassRoom objects with specified sizes.
+ *
+ * @returns {ClassRoom[]} An array of ClassRoom instances.
+ */
+export default function initializeRooms() {
+  // Create an array of ClassRoom objects with the given sizes
+  return [new ClassRoom(19), new ClassRoom(20), new ClassRoom(34)];
 }

@@ -1,35 +1,61 @@
-// Represents the Currency class
+/**
+ * Represents a currency with a code and name.
+ */
 export default class Currency {
-	// Initializing the parameters
-	constructor(code, name) {
-		// Storing params in private properties
-		this._code = code;
-		this._name = name;
-	}
+  /**
+   * Creates a new Currency instance.
+   *
+   * @param {string} code - The currency code.
+   * @param {string} name - The currency name.
+   */
+  constructor(code, name) {
+    // Store the code and name in private properties
+    this._code = code;
+    this._name = name;
+  }
 
-	// Getter for the currency code
+  /**
+   * Gets the currency code.
+   *
+   * @returns {string} The currency code.
+   */
   get code() {
     return this._code;
   }
 
-  // Setter for the currency code
+  /**
+   * Sets the currency code.
+   *
+   * @param {string} newCode - The new currency code.
+   */
   set code(newCode) {
     this._code = newCode;
   }
 
-  // Getter for the currency name
+  /**
+   * Gets the currency name.
+   *
+   * @returns {string} The currency name.
+   */
   get name() {
     return this._name;
   }
 
-  // Setter for the currency name
+  /**
+   * Sets the currency name.
+   *
+   * @param {string} newName - The new currency name.
+   */
   set name(newName) {
     this._name = newName;
   }
 
-  // Method to display the full currency information
+  /**
+   * Displays the full currency information in a formatted string.
+   *
+   * @returns {string} The formatted currency information.
+   */
   displayFullCurrency() {
-    return `${this.name} (${this.code})`;  
-
+    return `${this.name} (${this.code})`;
   }
 }
